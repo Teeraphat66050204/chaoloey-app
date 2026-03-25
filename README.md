@@ -1,53 +1,53 @@
 # Chaoloey Android App
 
-Android client for the Chaoloey car rental system.
+แอป Android สำหรับระบบเช่ารถ Chaoloey
 
-This project is built with:
+โปรเจกต์นี้พัฒนาด้วย:
 
 - Kotlin
-- XML layouts
+- XML Layouts
 - ViewBinding
 - Retrofit + Gson
-- OkHttp logging interceptor
+- OkHttp Logging Interceptor
 - Glide
 - RecyclerView
 
-## Features
+## ฟีเจอร์ที่มี
 
-- Login
-- Car list
-- Car detail
-- Booking
-- My bookings
+- เข้าสู่ระบบ
+- รายการรถ
+- รายละเอียดรถ
+- จองรถ
+- รายการจองของฉัน
 
 ## Backend
 
-This Android app uses the existing backend from:
+แอป Android นี้ใช้งานร่วมกับ backend เดิมจาก:
 
 - `https://github.com/Teeraphat66050204/chaoloey`
 
-Base URL used in the app:
+Base URL ที่ใช้ในแอป:
 
 - `http://10.0.2.2:5000/api/`
 
-Note:
+หมายเหตุ:
 
-- `10.0.2.2` works for the Android Emulator.
-- If you run on a real Android device, change the base URL to your computer's local IP address.
+- `10.0.2.2` ใช้สำหรับ Android Emulator
+- ถ้าทดสอบบนมือถือจริง ต้องเปลี่ยนเป็น IP ของเครื่องคอมพิวเตอร์ในวง LAN เดียวกัน
 
-## Requirements
+## สิ่งที่ต้องมี
 
 - Android Studio
-- Android SDK installed
+- Android SDK
 - JDK 11
-- Android Emulator or physical device
-- Backend server running on port `5000`
+- Android Emulator หรือมือถือ Android
+- Backend ที่รันอยู่บนพอร์ต `5000`
 
-## How To Run
+## วิธีรันโปรเจกต์
 
-### 1. Run the backend
+### 1. รัน Backend ก่อน
 
-Clone and start the backend project first:
+Clone และเริ่ม backend:
 
 ```bash
 git clone https://github.com/Teeraphat66050204/chaoloey.git
@@ -59,32 +59,32 @@ npm run prisma:seed
 npm run dev
 ```
 
-Backend should run at:
+Backend จะรันที่:
 
 ```text
 http://localhost:5000
 ```
 
-### 2. Open the Android project
+### 2. เปิดโปรเจกต์ใน Android Studio
 
-Open this repository in Android Studio.
+เปิด repository นี้ด้วย Android Studio
 
 ### 3. Sync Gradle
 
-Let Android Studio sync the Gradle project and download dependencies.
+รอให้ Android Studio sync โปรเจกต์และติดตั้ง dependencies ให้ครบ
 
-### 4. Run the app
+### 4. รันแอป
 
-Start an Android Emulator and run the app.
+เปิด Android Emulator แล้วกด Run ได้เลย
 
-## Test Accounts
+## บัญชีสำหรับทดสอบ
 
-The backend seed provides these accounts:
+บัญชีที่ backend seed มาให้:
 
 - Admin: `admin@chaoloey.com` / `admin123`
 - User: `member@chaoloey.com` / `member123`
 
-## Project Structure
+## โครงสร้างโปรเจกต์
 
 ```text
 app/
@@ -96,7 +96,7 @@ app/
   src/main/res/layout/
 ```
 
-## Main Screens
+## หน้าหลักในแอป
 
 - `LoginActivity`
 - `CarListActivity`
@@ -104,19 +104,19 @@ app/
 - `BookingActivity`
 - `MyBookingsActivity`
 
-## Screenshots
+## ส่วนภาพหน้าจอ
 
-Add your app screenshots here after capturing them from the emulator or device.
+คุณสามารถเพิ่มภาพหน้าจอของแอปไว้ในส่วนนี้ได้ภายหลัง
 
-Suggested screenshots:
+ภาพที่แนะนำ:
 
-- Login screen
-- Car list screen
-- Car detail screen
-- Booking screen
-- My bookings screen
+- หน้า Login
+- หน้า Car List
+- หน้า Car Detail
+- หน้า Booking
+- หน้า My Bookings
 
-Example structure:
+โครงสร้างไฟล์ตัวอย่าง:
 
 ```text
 screenshots/
@@ -127,7 +127,7 @@ screenshots/
   my-bookings.png
 ```
 
-Example markdown:
+ตัวอย่าง markdown:
 
 ```md
 ![Login](screenshots/login.png)
@@ -137,9 +137,9 @@ Example markdown:
 ![My Bookings](screenshots/my-bookings.png)
 ```
 
-## API Summary
+## สรุป API ที่ใช้
 
-This Android app uses the existing backend APIs only.
+แอป Android นี้ใช้งานเฉพาะ API ที่มีอยู่แล้วใน backend
 
 ### Auth
 
@@ -157,60 +157,61 @@ This Android app uses the existing backend APIs only.
 
 ### Authorization
 
-Authenticated endpoints require:
+API ที่ต้องล็อกอินจะต้องส่ง header แบบนี้:
 
 ```http
 Authorization: Bearer <token>
 ```
 
-The token is stored locally using `SharedPreferences`.
+Token จะถูกเก็บไว้ในเครื่องด้วย `SharedPreferences`
 
-## Real Device Installation
+## การติดตั้งสำหรับทดสอบบนมือถือจริง
 
-If you want to test on a real Android phone instead of the emulator:
+ถ้าต้องการทดสอบบนมือถือ Android จริงแทน Emulator:
 
-### 1. Connect phone and computer to the same Wi-Fi
+### 1. ให้มือถือกับคอมต่อ Wi-Fi วงเดียวกัน
 
-Your backend and your Android phone must be on the same local network.
+มือถือและ backend ต้องอยู่ใน network เดียวกัน
 
-### 2. Find your computer's local IP address
+### 2. หา IP ของเครื่องคอมพิวเตอร์
 
-Example:
+ตัวอย่าง:
 
 ```text
 192.168.1.10
 ```
 
-### 3. Change the base URL in `RetrofitClient.kt`
+### 3. เปลี่ยน Base URL ใน `RetrofitClient.kt`
 
-From:
+จาก:
 
 ```kotlin
 private const val BASE_URL = "http://10.0.2.2:5000/api/"
 ```
 
-To:
+เป็น:
 
 ```kotlin
 private const val BASE_URL = "http://192.168.1.10:5000/api/"
 ```
 
-Replace `192.168.1.10` with your actual computer IP.
+เปลี่ยน `192.168.1.10` ให้เป็น IP จริงของเครื่องคุณ
 
-### 4. Make sure the backend is accessible
+### 4. ตรวจสอบว่า backend เข้าถึงได้จากมือถือ
 
-Run the backend and make sure port `5000` is open to devices on your network.
+รัน backend และตรวจสอบว่าพอร์ต `5000` ไม่ถูกบล็อกในวง network เดียวกัน
 
-### 5. Allow cleartext HTTP traffic
+### 5. อนุญาต cleartext HTTP
 
-This project already enables cleartext traffic for local development in `AndroidManifest.xml`.
+โปรเจกต์นี้เปิดใช้ cleartext traffic สำหรับ local development ไว้แล้วใน `AndroidManifest.xml`
 
-### 6. Build and install the app
+### 6. ติดตั้งแอปลงมือถือ
 
-You can run the app directly from Android Studio or build an APK and install it on your phone.
+คุณสามารถรันจาก Android Studio โดยตรง หรือ build APK แล้วติดตั้งลงเครื่องได้
 
-## Notes
+## หมายเหตุ
 
-- This project does not use Jetpack Compose.
-- The app uses `ViewBinding` for all XML screens.
-- HTTP cleartext traffic is enabled for local development because the backend runs on `http://10.0.2.2:5000`.
+- โปรเจกต์นี้ไม่ได้ใช้ Jetpack Compose
+- ทุกหน้าจอใช้ `ViewBinding` ร่วมกับ XML
+- เปิดใช้ HTTP cleartext สำหรับ local development เพราะ backend รันบน `http://10.0.2.2:5000`
+
