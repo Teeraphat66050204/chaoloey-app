@@ -6,10 +6,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.example.chaoloey.data.model.ErrorResponse
-import com.example.chaoloey.data.model.LoginRequest
 import com.example.chaoloey.data.model.LoginResponse
+import com.example.chaoloey.data.model.RegisterRequest
 import com.example.chaoloey.data.remote.RetrofitClient
-import com.example.chaoloey.databinding.ActivityLoginBinding
+import com.example.chaoloey.databinding.ActivityRegisterBinding
 import com.example.chaoloey.util.TokenManager
 import com.google.gson.Gson
 import okhttp3.ResponseBody
@@ -17,72 +17,68 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class LoginActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityLoginBinding
+    private lateinit var binding: ActivityRegisterBinding
     private lateinit var tokenManager: TokenManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityLoginBinding.inflate(layoutInflater)
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         tokenManager = TokenManager(this)
 
-        if (!tokenManager.getToken().isNullOrEmpty()) {
-            openCarListActivity()
-            return
+        binding.registerButton.setOnClickListener {
+            register()
         }
 
-        binding.loginButton.setOnClickListener {
-            login()
-        }
-
-        binding.goToRegisterTextView.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
+        binding.goToLoginTextView.setOnClickListener {
+            finish()
         }
     }
 
-    private fun login() {
+    private fun register() {
+        val name = binding.nameEditText.text?.toString()?.trim().orEmpty()
         val email = binding.emailEditText.text?.toString()?.trim().orEmpty()
         val password = binding.passwordEditText.text?.toString()?.trim().orEmpty()
 
-        if (email.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, getString(R.string.login_empty_fields), Toast.LENGTH_SHORT).show()
+        if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, getString(R.string.register_empty_fields), Toast.LENGTH_SHORT).show()
             return
         }
 
         setLoading(true)
 
-        val request = LoginRequest(email = email, password = password)
+        val request = RegisterRequest(name = name, email = email, password = password)
 
-        RetrofitClient.apiService.login(request).enqueue(object : Callback<LoginResponse> {
+        RetrofitClient.apiService.register(request).enqueue(object : Callback<LoginResponse> {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 setLoading(false)
 
                 if (response.isSuccessful) {
-                    val loginResponse = response.body()
-                    val token = loginResponse?.data?.token
+                    val registerResponse = response.body()
+                    val token = registerResponse?.data?.token
 
-                    if (loginResponse?.success == true && !token.isNullOrEmpty()) {
+                    if (registerResponse?.success == true && !token.isNullOrEmpty()) {
                         tokenManager.saveToken(token)
                         Toast.makeText(
-                            this@LoginActivity,
-                            getString(R.string.login_success),
+                            this@RegisterActivity,
+                            getString(R.string.register_success),
                             Toast.LENGTH_SHORT
                         ).show()
                         openCarListActivity()
                     } else {
                         Toast.makeText(
-                            this@LoginActivity,
-                            getString(R.string.login_failed),
+                            this@RegisterActivity,
+                            getString(R.string.register_failed),
                             Toast.LENGTH_SHORT
                         ).show()
                     }
                 } else {
                     Toast.makeText(
-                        this@LoginActivity,
+                        this@RegisterActivity,
                         parseErrorMessage(response.errorBody()),
                         Toast.LENGTH_SHORT
                     ).show()
@@ -92,7 +88,7 @@ class LoginActivity : AppCompatActivity() {
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                 setLoading(false)
                 Toast.makeText(
-                    this@LoginActivity,
+                    this@RegisterActivity,
                     getString(R.string.network_error, t.message ?: "unknown error"),
                     Toast.LENGTH_SHORT
                 ).show()
@@ -103,17 +99,19 @@ class LoginActivity : AppCompatActivity() {
     private fun parseErrorMessage(errorBody: ResponseBody?): String {
         return try {
             val errorResponse = Gson().fromJson(errorBody?.charStream(), ErrorResponse::class.java)
-            errorResponse.message ?: getString(R.string.login_failed)
+            errorResponse.message ?: getString(R.string.register_failed)
         } catch (_: Exception) {
-            getString(R.string.login_failed)
+            getString(R.string.register_failed)
         }
     }
 
     private fun setLoading(isLoading: Boolean) {
         binding.progressBar.isVisible = isLoading
-        binding.loginButton.isEnabled = !isLoading
+        binding.registerButton.isEnabled = !isLoading
+        binding.nameEditText.isEnabled = !isLoading
         binding.emailEditText.isEnabled = !isLoading
         binding.passwordEditText.isEnabled = !isLoading
+        binding.nameEditText.alpha = if (isLoading) 0.5f else 1.0f
         binding.emailEditText.alpha = if (isLoading) 0.5f else 1.0f
         binding.passwordEditText.alpha = if (isLoading) 0.5f else 1.0f
     }

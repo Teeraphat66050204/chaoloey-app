@@ -1,4 +1,33 @@
 <resources>
     <string name="app_name">ChaoloeyApp</string>
     <string name="welcome_message">Welcome to Chaoloey</string>
+    <string name="login_title">Sign in</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="name_hint">Full name</string>
+    <string name="login_button">Log in</string>
+    <string name="register_title">Create account</string>
+    <string name="register_button">Create account</string>
+    <string name="login_empty_fields">Please enter both email and password.</string>
+    <string name="login_success">Login successful.</string>
+    <string name="login_failed">Login failed.</string>
+    <string name="register_empty_fields">Please enter name, email, and password.</string>
+    <string name="register_success">Account created successfully.</string>
+    <string name="register_failed">Registration failed.</string>
+    <string name="network_error">Unable to connect to server: %1$s</string>
+    <string name="go_to_register">No account yet? Create one</string>
+    <string name="go_to_login">Already have an account? Log in</string>
+    <string name="car_list_title">Find Your Ride</string>
+    <string name="car_list_subtitle">Clean layout, faster scanning, better proportions.</string>
+    <string name="my_bookings_label">My Bookings</string>
+    <string name="logout_label">Log Out</string>
+    <string name="no_cars_found">No cars found</string>
+    <string name="my_bookings_title">My Bookings</string>
+    <string name="my_bookings_subtitle">Track dates, status, and total without cramped cards.</string>
+    <string name="back_to_cars_label">Cars</string>
+    <string name="refresh_label">Refresh</string>
+    <string name="no_bookings_found">No bookings found</string>
+    <string name="booking_total_label">Total</string>
+    <string name="car_image_content_description">Car image</string>
+    <string name="car_price_unit">/ day</string>
 </resources>

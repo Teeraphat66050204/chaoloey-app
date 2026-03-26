@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <color name="chaoloey_primary">#0B1730</color>
+    <color name="chaoloey_primary_dark">#071225</color>
+    <color name="chaoloey_surface">#13233F</color>
+    <color name="chaoloey_surface_elevated">#182A4A</color>
+    <color name="chaoloey_accent">#F4A900</color>
+    <color name="chaoloey_success_bg">#1E4D3A</color>
+    <color name="chaoloey_success_text">#CFF8E5</color>
+    <color name="chaoloey_warning_bg">#5B4312</color>
+    <color name="chaoloey_warning_text">#FFE6A8</color>
+    <color name="chaoloey_text">#F8FAFC</color>
+    <color name="chaoloey_text_muted">#B6C2D1</color>
+    <color name="chaoloey_stroke">#2B3A55</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

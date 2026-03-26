@@ -7,6 +7,7 @@ import com.example.chaoloey.data.model.BookingRequest
 import com.example.chaoloey.data.model.BookingResponse
 import com.example.chaoloey.data.model.LoginRequest
 import com.example.chaoloey.data.model.LoginResponse
+import com.example.chaoloey.data.model.RegisterRequest
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -18,6 +19,9 @@ interface ApiService {
 
     @POST("auth/login")
     fun login(@Body request: LoginRequest): Call<LoginResponse>
+
+    @POST("auth/register")
+    fun register(@Body request: RegisterRequest): Call<LoginResponse>
 
     @GET("cars")
     fun getCars(): Call<CarListResponse>

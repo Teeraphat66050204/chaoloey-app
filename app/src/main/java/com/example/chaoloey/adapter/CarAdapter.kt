@@ -17,7 +17,12 @@ class CarAdapter(
 
         fun bind(car: Car) {
             binding.carNameTextView.text = car.name
-            binding.carPriceTextView.text = "THB ${car.pricePerDay.toInt()} / day"
+            binding.carMetaTextView.text = "${car.brand} ${car.model}  •  ${car.fuelType}"
+            binding.carCategoryTextView.text = car.category.uppercase()
+            binding.carPriceTextView.text = "THB ${car.pricePerDay.toInt()}"
+            binding.carSpecSeatsTextView.text = "${car.seats} seats"
+            binding.carSpecTransmissionTextView.text = car.transmission
+            binding.carSpecYearTextView.text = car.year.toString()
 
             Glide.with(binding.carImageView.context)
                 .load(car.imageUrl)

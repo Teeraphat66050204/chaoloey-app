@@ -7,7 +7,7 @@
     android:padding="24dp">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/loginCard"
+        android:id="@+id/registerCard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/chaoloey_surface"
@@ -31,10 +31,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
-                android:text="@string/login_title"
+                android:text="@string/register_title"
                 android:textColor="@color/chaoloey_text"
                 android:textSize="28sp"
                 android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilName"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/name_hint"
+                app:boxBackgroundColor="@color/chaoloey_primary"
+                app:boxCornerRadiusBottomEnd="18dp"
+                app:boxCornerRadiusBottomStart="18dp"
+                app:boxCornerRadiusTopEnd="18dp"
+                app:boxCornerRadiusTopStart="18dp"
+                app:boxStrokeColor="@color/chaoloey_stroke"
+                app:hintTextAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                app:hintTextColor="@color/chaoloey_text_muted">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="name"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/chaoloey_text" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilEmail"
@@ -89,10 +114,10 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/loginButton"
+                android:id="@+id/registerButton"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:text="@string/login_button"
+                android:text="@string/register_button"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -101,11 +126,11 @@
                 app:cornerRadius="18dp" />
 
             <TextView
-                android:id="@+id/goToRegisterTextView"
+                android:id="@+id/goToLoginTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
-                android:text="@string/go_to_register"
+                android:text="@string/go_to_login"
                 android:textColor="@color/chaoloey_accent"
                 android:textSize="14sp"
                 android:textStyle="bold" />
