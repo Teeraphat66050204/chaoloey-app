@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/ic_app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_app_icon"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.ChaoloeyApp">
+        <activity
+            android:name=".BookingDetailsActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ChaoloeyApp" />
+        <activity
+            android:name=".PaymentActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ChaoloeyApp" />
+        <activity
+            android:name=".BookingConfirmationActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ChaoloeyApp" />
+        <activity
+            android:name=".AccountSettingsActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ChaoloeyApp" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ChaoloeyApp" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ChaoloeyApp" />
+        <activity
+            android:name=".MyBookingsActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ChaoloeyApp" />
+        <activity
+            android:name=".MyBookingDetailActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ChaoloeyApp" />
+        <activity
+            android:name=".BookingActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ChaoloeyApp" />
+        <activity
+            android:name=".CarDetailActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ChaoloeyApp" />
+        <activity
+            android:name=".CarListActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ChaoloeyApp" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ChaoloeyApp" />
+
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ChaoloeyApp">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ChaoloeyApp" />
+        <activity
+            android:name=".ui.OnboardingActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ChaoloeyApp" />
+    </application>
+
+</manifest>

@@ -1,0 +1,104 @@
+<resources>
+    <string name="app_name">ChaoloeyApp</string>
+    <string name="welcome_message">Welcome to Chaoloey</string>
+    <string name="login_title">Sign in</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="name_hint">Full name</string>
+    <string name="login_button">Log in</string>
+    <string name="register_title">Create account</string>
+    <string name="register_button">Create account</string>
+    <string name="login_empty_fields">Please enter both email and password.</string>
+    <string name="login_success">Login successful.</string>
+    <string name="login_failed">Login failed.</string>
+    <string name="register_empty_fields">Please enter name, email, and password.</string>
+    <string name="register_success">Account created successfully.</string>
+    <string name="register_failed">Registration failed.</string>
+    <string name="network_error">Unable to connect to server: %1$s</string>
+    <string name="go_to_register">No account yet? Create one</string>
+    <string name="go_to_login">Already have an account? Log in</string>
+    <string name="car_list_title">Find Your Ride</string>
+    <string name="car_list_subtitle">Clean layout, faster scanning, better proportions.</string>
+    <string name="my_bookings_label">My Bookings</string>
+    <string name="logout_label">Log Out</string>
+    <string name="no_cars_found">No cars found</string>
+    <string name="my_bookings_title">My Bookings</string>
+    <string name="my_bookings_subtitle">Track dates, status, and total without cramped cards.</string>
+    <string name="back_to_cars_label">Cars</string>
+    <string name="refresh_label">Refresh</string>
+    <string name="no_bookings_found">No bookings found</string>
+    <string name="booking_total_label">Total</string>
+aoc
+    <!-- Locations -->
+    <string-array name="locations">
+        <item>Select Location</item>
+        <item>Bangkok (กรุงเทพ)</item>
+        <item>Chiang Mai (เชียงใหม่)</item>
+        <item>Phuket (ภูเก็ต)</item>
+    </string-array>    <string name="car_image_content_description">Car image</string>
+    <string name="car_price_unit">/ day</string>
+
+    <!-- Login Screen Strings -->
+    <string name="qent_app_name">Chaoloey</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="ready_to_hit_road">Ready to hit the road.</string>
+    <string name="email_phone_hint">Email/Phone Number</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="login_btn">Login</string>
+    <string name="sign_up_btn">Sign up</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="sign_up_link">Sign Up</string>
+
+    <!-- Sign Up Screen Strings -->
+    <string name="create_account_title">Sign Up</string>
+    <string name="create_account_subtitle">Join us to get started</string>
+    <string name="full_name_hint">Full Name</string>
+    <string name="country_hint">Country</string>
+    <string name="sign_up_btn_main">Sign up</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="login_link">Login</string>
+
+    <!-- Onboarding Screen Strings -->
+    <string name="onboarding_page1_title">Welcome to\nChaoloey</string>
+    <string name="onboarding_page2_title">Lets Start\nA New Experience\nWith Car rental.</string>
+    <string name="onboarding_page2_description">Discover your next adventure with Chaoloey. we\'re here to provide you with a seamless car rental experience. Let\'s get started on your journey.</string>
+    <string name="get_started">Get Started</string>
+
+    <!-- Icon Content Descriptions -->
+    <string name="favorite">Favorite</string>
+    <string name="rating">Rating</string>
+    <string name="search">Search</string>
+    <string name="filter">Filter</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="bookings">Bookings</string>
+    <string name="location">Location</string>
+    <string name="notifications">Notifications</string>
+    <string name="settings">Settings</string>
+    <string name="back">Back</string>
+    <string name="account_settings_title">Account Settings</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="saving">Saving…</string>
+    <string name="please_enter_name">Please enter a name</string>
+    <string name="name_too_short">Name must be at least 2 characters</string>
+    <string name="auth_failed">Authentication failed</string>
+    <string name="profile_updated">Profile updated successfully</string>
+    <string name="failed_to_update_profile">Failed to update profile</string>
+    <string name="days_format">%d วัน</string>
+    <string name="price_format">฿%s</string>
+    <string name="booking_id_format">#%d</string>
+    <string name="date_range_format">%1$s - %2$s</string>
+    <string name="car_detail_title">Car Detail</string>
+    <string name="label_seats">Seats</string>
+    <string name="label_transmission">Transmission</string>
+    <string name="label_transmission_auto">Auto</string>
+    <string name="label_fuel_type">Fuel Type</string>
+    <string name="label_fuel_petrol">Petrol</string>
+    <string name="label_year">Year</string>
+    <string name="label_description">Description</string>
+    <string name="book_now">Book Now</string>
+    <string name="brand_model_format">%1$s %2$s</string>
+    <string name="price_per_day_format">฿%s / วัน</string>
+    <string name="hint_country">Country</string>
+</resources>

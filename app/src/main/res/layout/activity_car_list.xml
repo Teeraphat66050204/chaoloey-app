@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <!-- Header with Search and Filter -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Logo and Title Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="@string/qent_app_name"
+                android:src="@drawable/ic_app_icon"
+                app:tint="@color/login_button_primary"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/qent_app_name"
+                android:textColor="@color/login_button_primary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/userProfileImageView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="Profile"
+                android:src="@drawable/ic_person"
+                app:tint="@color/login_text_primary" />
+        </LinearLayout>
+
+        <!-- Search Bar -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/login_input_background"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="Search"
+                    android:src="@drawable/ic_search"
+                    app:tint="@color/login_text_secondary"
+                    android:layout_marginEnd="8dp" />
+
+                <EditText
+                    android:id="@+id/searchEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="Search your dream car..."
+                    android:inputType="text"
+                    android:textColor="@color/login_text_primary"
+                    android:textColorHint="@color/login_text_secondary"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/filterButton"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Filter"
+                    android:src="@drawable/ic_filter"
+                    app:tint="@color/login_text_secondary" />
+            </LinearLayout>
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+    <!-- Main Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Recommended Section -->
+            <LinearLayout
+                android:id="@+id/recommendedSectionHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Recommended For You"
+                    android:textColor="@color/login_text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/viewAllRecommendedTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View All"
+                    android:textColor="@color/login_link_text"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Recommended Cars (Grid) -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recommendedCarsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2" />
+
+            <!-- All Cars Section -->
+            <TextView
+                android:id="@+id/allCarsTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="All Cars"
+                android:textColor="@color/login_text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <!-- All Cars Grid -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/carsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2" />
+
+            <!-- Empty State -->
+            <TextView
+                android:id="@+id/emptyTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/no_cars_found"
+                android:textColor="@color/login_text_secondary"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <!-- Loading -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@android:color/black"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottom_navigation_menu"
+        app:itemIconTint="@color/nav_icon_tint" />
+
+</LinearLayout>
