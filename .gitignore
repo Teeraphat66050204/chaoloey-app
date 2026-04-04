@@ -18,6 +18,7 @@ local.properties
 # ==========================================
 # IntelliJ / Android Studio IDE
 # ==========================================
+/.junie/
 /.idea/caches/
 .idea/libraries/
 .idea/modules.xml

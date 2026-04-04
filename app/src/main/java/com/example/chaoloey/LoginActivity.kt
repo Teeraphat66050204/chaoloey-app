@@ -77,14 +77,10 @@ class LoginActivity : AppCompatActivity() {
                     val token = loginResponse?.data?.token
 
                     if (loginResponse?.success == true && !token.isNullOrEmpty()) {
-                        // Save token
                         tokenManager.saveToken(token)
-                        // บันทึก username เพื่อให้ ProfileActivity แสดงถูกต้อง
                         val userName = loginResponse.data?.user?.name ?: ""
                         if (userName.isNotEmpty()) {
-                            getSharedPreferences("app_prefs", MODE_PRIVATE).edit()
-                                .putString("username", userName)
-                                .apply()
+                            tokenManager.saveUsername(userName)
                         }
 
                         Toast.makeText(
@@ -144,6 +140,4 @@ class LoginActivity : AppCompatActivity() {
         finish()
     }
 }
-
-
 

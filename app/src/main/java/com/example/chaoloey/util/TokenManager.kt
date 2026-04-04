@@ -17,11 +17,20 @@ class TokenManager(context: Context) {
     }
 
     fun clearToken() {
-        sharedPreferences.edit().remove(KEY_TOKEN).apply()
+        sharedPreferences.edit().remove(KEY_TOKEN).remove(KEY_USERNAME).apply()
+    }
+
+    fun saveUsername(name: String) {
+        sharedPreferences.edit().putString(KEY_USERNAME, name).apply()
+    }
+
+    fun getUsername(): String {
+        return sharedPreferences.getString(KEY_USERNAME, "Guest User") ?: "Guest User"
     }
 
     companion object {
         private const val PREF_NAME = "chaoloey_preferences"
         private const val KEY_TOKEN = "auth_token"
+        private const val KEY_USERNAME = "username"
     }
 }

@@ -19,11 +19,7 @@ class ProfileActivity : AppCompatActivity() {
 
         tokenManager = TokenManager(this)
 
-        // Get username from SharedPreferences or Intent
-        val sharedPref = getSharedPreferences("app_prefs", MODE_PRIVATE)
-        val username = sharedPref.getString("username", "Guest User")
-
-        binding.usernameTextView.text = username
+        binding.usernameTextView.text = tokenManager.getUsername()
 
         setupClickListeners()
     }

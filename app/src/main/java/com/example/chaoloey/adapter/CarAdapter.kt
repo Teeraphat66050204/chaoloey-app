@@ -17,42 +17,27 @@ class CarAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(car: Car) {
-            try {
-                binding.carNameTextView.text = car.name
-                binding.pricePerDayTextView.text = "฿${String.format("%,.0f", car.pricePerDay)}"
-                binding.locationTextView.text = car.category
-                binding.ratingTextView.text = "5.0"
+            binding.carNameTextView.text = car.name
+            binding.pricePerDayTextView.text = binding.root.context.getString(
+                com.example.chaoloey.R.string.price_format,
+                String.format(java.util.Locale.US, "%,.0f", car.pricePerDay)
+            )
+            binding.locationTextView.text = car.category
+            binding.ratingTextView.text = car.transmission
 
-                Glide.with(binding.carImageView.context)
-                    .load(car.imageUrl)
-                    .centerCrop()
-                    .into(binding.carImageView)
+            Glide.with(binding.carImageView.context)
+                .load(car.imageUrl)
+                .centerCrop()
+                .into(binding.carImageView)
 
-                binding.bookNowButton.setOnClickListener {
-                    onItemClick(car)
-                }
-
-                binding.root.setOnClickListener {
-                    onItemClick(car)
-                }
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
+            binding.bookNowButton.setOnClickListener { onItemClick(car) }
+            binding.root.setOnClickListener { onItemClick(car) }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarViewHolder {
-        return try {
-            val binding = ItemCarBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
-            CarViewHolder(binding)
-        } catch (e: Exception) {
-            e.printStackTrace()
-            throw e
-        }
+        val binding = ItemCarBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return CarViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: CarViewHolder, position: Int) {

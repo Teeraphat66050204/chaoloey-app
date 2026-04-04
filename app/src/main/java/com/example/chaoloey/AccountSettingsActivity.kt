@@ -3,7 +3,6 @@ package com.example.chaoloey
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.edit
 import com.example.chaoloey.data.model.LoginResponse
 import com.example.chaoloey.data.model.UpdateProfileRequest
 import com.example.chaoloey.data.remote.RetrofitClient
@@ -25,9 +24,7 @@ class AccountSettingsActivity : AppCompatActivity() {
 
         tokenManager = TokenManager(this)
 
-        val sharedPref = getSharedPreferences("app_prefs", MODE_PRIVATE)
-        val currentName = sharedPref.getString("username", "Guest User") ?: "Guest User"
-        binding.nameEditText.setText(currentName)
+        binding.nameEditText.setText(tokenManager.getUsername())
 
         setupClickListeners()
     }
@@ -81,9 +78,7 @@ class AccountSettingsActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         val loginResponse = response.body()
                         if (loginResponse?.success == true) {
-                            val sharedPref = getSharedPreferences("app_prefs", MODE_PRIVATE)
-                            sharedPref.edit { putString("username", newName) }
-
+                            tokenManager.saveUsername(newName)
                             Toast.makeText(this@AccountSettingsActivity, getString(R.string.profile_updated), Toast.LENGTH_SHORT).show()
                             finish()
                         } else {
