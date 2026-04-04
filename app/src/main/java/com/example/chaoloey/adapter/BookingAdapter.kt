@@ -1,9 +1,10 @@
-package com.example.chaoloey
+package com.example.chaoloey.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.chaoloey.R
 import com.example.chaoloey.data.model.BookingItem
 import com.example.chaoloey.databinding.ItemBookingBinding
 import java.text.SimpleDateFormat
@@ -11,7 +12,7 @@ import java.util.Locale
 
 class BookingAdapter(
     private val bookings: List<BookingItem>,
-    private val onActionClick: (BookingItem) -> Unit
+    private val onItemClick: (BookingItem) -> Unit
 ) : RecyclerView.Adapter<BookingAdapter.BookingViewHolder>() {
 
     inner class BookingViewHolder(private val binding: ItemBookingBinding) :
@@ -20,7 +21,7 @@ class BookingAdapter(
         fun bind(booking: BookingItem) {
             binding.carNameTextView.text = booking.car.name
 
-            // Status
+            // Status chip
             binding.statusChip.text = booking.status
             binding.statusChip.setChipBackgroundColorResource(
                 when (booking.status.uppercase()) {
@@ -32,28 +33,28 @@ class BookingAdapter(
                 }
             )
 
-            // แปลงวันจาก ISO string → "dd MMM yyyy"
+            // Parse ISO date → "dd MMM yyyy"
             val inFmt  = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.US)
             val outFmt = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
             val startStr = try { outFmt.format(inFmt.parse(booking.startDate)!!) } catch (_: Exception) { booking.startDate }
             val endStr   = try { outFmt.format(inFmt.parse(booking.endDate)!!)   } catch (_: Exception) { booking.endDate }
             binding.dateRangeTextView.text = "$startStr – $endStr"
 
-            // ราคา ฿
+            // Price
             binding.totalPriceTextView.text = "฿${String.format(Locale.US, "%,.0f", booking.totalPrice)}"
 
-            // ซ่อน location (API ไม่มีข้อมูล)
+            // Location not available from API
             binding.locationTextView.text = ""
 
-            // รูปรถ
+            // Car image
             Glide.with(binding.root.context)
                 .load(booking.car.imageUrl)
                 .centerCrop()
                 .placeholder(R.color.login_input_background)
                 .into(binding.carImageView)
 
-            binding.root.setOnClickListener { onActionClick(booking) }
-            binding.actionButton.setOnClickListener { onActionClick(booking) }
+            binding.root.setOnClickListener { onItemClick(booking) }
+            binding.actionButton.setOnClickListener { onItemClick(booking) }
         }
     }
 
@@ -68,3 +69,4 @@ class BookingAdapter(
 
     override fun getItemCount() = bookings.size
 }
+

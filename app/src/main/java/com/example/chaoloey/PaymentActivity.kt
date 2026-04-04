@@ -74,7 +74,7 @@ class PaymentActivity : AppCompatActivity() {
     private fun createBooking() {
         val token = tokenManager.getToken()
         if (token.isNullOrEmpty()) {
-            Toast.makeText(this, "กรุณาเข้าสู่ระบบก่อนทำการจอง", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.auth_failed), Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -83,7 +83,7 @@ class PaymentActivity : AppCompatActivity() {
         val returnDateStr = intent.getStringExtra("return_date") ?: ""
 
         if (carId == -1) {
-            Toast.makeText(this, "ไม่พบข้อมูลรถ กรุณาลองใหม่อีกครั้ง", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.car_not_found), Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -108,19 +108,19 @@ class PaymentActivity : AppCompatActivity() {
                     navIntent.putExtra("payment_method", selectedPaymentMethod)
                     startActivity(navIntent)
                 } else {
-                    Toast.makeText(this@PaymentActivity, "การจองล้มเหลว: ${response.code()}", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@PaymentActivity, getString(R.string.booking_failed, response.code()), Toast.LENGTH_LONG).show()
                 }
             }
 
             override fun onFailure(call: Call<BookingResponse>, t: Throwable) {
                 setLoading(false)
-                Toast.makeText(this@PaymentActivity, "ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้: ${t.message}", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@PaymentActivity, getString(R.string.network_error, t.message ?: "unknown"), Toast.LENGTH_LONG).show()
             }
         })
     }
 
     private fun setLoading(isLoading: Boolean) {
         binding.payNowButton.isEnabled = !isLoading
-        binding.payNowButton.text = if (isLoading) "กำลังดำเนินการ..." else "Pay Now"
+        binding.payNowButton.text = if (isLoading) getString(R.string.processing) else getString(R.string.pay_now)
     }
 }

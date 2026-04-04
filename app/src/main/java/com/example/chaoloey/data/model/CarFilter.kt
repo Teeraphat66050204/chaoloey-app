@@ -12,8 +12,4 @@ data class CarFilter(
     val fuelTypes: List<String> = emptyList()
 )
 
-data class CarBrand(
-    val name: String,
-    val icon: Int? = null
-)
 

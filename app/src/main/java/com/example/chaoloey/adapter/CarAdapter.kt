@@ -20,7 +20,7 @@ class CarAdapter(
             try {
                 binding.carNameTextView.text = car.name
                 binding.pricePerDayTextView.text = "฿${String.format("%,.0f", car.pricePerDay)}"
-                binding.locationTextView.text = "City, Country"
+                binding.locationTextView.text = car.category
                 binding.ratingTextView.text = "5.0"
 
                 Glide.with(binding.carImageView.context)

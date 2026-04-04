@@ -69,11 +69,6 @@
             android:exported="false"
             android:label="@string/app_name"
             android:theme="@style/Theme.ChaoloeyApp" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.ChaoloeyApp" />
 
         <activity
             android:name=".SplashActivity"

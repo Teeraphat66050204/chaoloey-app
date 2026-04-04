@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    kotlin("android")
 }
 
 android {
@@ -34,6 +35,10 @@ android {
     buildFeatures {
         viewBinding = true
     }
+}
+
+kotlin {
+    jvmToolchain(11)
 }
 
 dependencies {

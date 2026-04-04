@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1A1A1A">
+    android:background="@color/color_onboarding_bg">
 
     <!-- Background Image (placeholder) -->
     <ImageView
@@ -18,7 +18,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#80000000" />
+        android:background="@color/color_overlay_dark" />
 
     <!-- Content -->
     <LinearLayout
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
             android:text="@string/onboarding_page2_description"
-            android:textColor="#CCCCCC"
+                android:textColor="@color/login_text_secondary"
             android:textSize="14sp" />
 
         <!-- Get Started Button -->

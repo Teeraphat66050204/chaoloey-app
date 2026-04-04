@@ -189,8 +189,8 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@android:color/black"
+        app:itemIconTint="@color/nav_icon_tint"
         app:labelVisibilityMode="unlabeled"
-        app:menu="@menu/bottom_navigation_menu"
-        app:itemIconTint="@color/nav_icon_tint" />
+        app:menu="@menu/bottom_navigation_menu" />
 
 </LinearLayout>

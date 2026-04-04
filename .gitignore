@@ -1,18 +1,69 @@
+# ==========================================
+# Android / Gradle
+# ==========================================
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+.gradle/
+/build/
+/captures/
+.externalNativeBuild/
+.cxx/
 local.properties
 
+# Kotlin incremental compilation
+**/.kotlin/
+
+# Generated sources
+**/build/generated/
+
+# ==========================================
+# IntelliJ / Android Studio IDE
+# ==========================================
+/.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.idea/.gitignore
+.idea/deploymentTargetDropDown.xml
+.idea/migrations.xml
+.idea/vcs.xml
+.idea/copilotDiffState.xml
+*.iws
+
+# ==========================================
+# Signing / Keystore (DO NOT commit)
+# ==========================================
+*.jks
+*.keystore
+keystore.properties
+release.properties
+
+# ==========================================
+# OS generated files
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ==========================================
+# Design reference images & docs (root level)
+# ==========================================
+/*.png
+/*.jpg
+/*.jpeg
+/build_log.txt
+/ICON_IMPLEMENTATION_GUIDE.md
+/ICON_SUMMARY.md
+/STATUS_REPORT.md
+
+# ==========================================
+# Folders not part of the main app
+# ==========================================
 /backend_ref/
 /chaoloey_app_remote/

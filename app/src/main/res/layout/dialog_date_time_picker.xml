@@ -165,7 +165,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="⚠️ วันที่เลือกถูกจองแล้ว กรุณาเลือกวันอื่น"
-        android:textColor="#EF4444"
+        android:textColor="@color/color_error"
         android:textSize="13sp"
         android:gravity="center"
         android:visibility="gone"

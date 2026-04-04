@@ -163,11 +163,10 @@ class CarListActivity : AppCompatActivity() {
             } ?: true
             val seatingMatch = filter.seatingCapacity.isEmpty() || 
                     filter.seatingCapacity.contains(car.seats)
-            val fuelTypeMatch = filter.fuelTypes.isEmpty() || 
+            val fuelTypeMatch = filter.fuelTypes.isEmpty() ||
                     filter.fuelTypes.contains(car.fuelType)
-            val locationMatch = filter.location.isNullOrEmpty() || true
 
-            carTypeMatch && priceMatch && seatingMatch && fuelTypeMatch && locationMatch
+            carTypeMatch && priceMatch && seatingMatch && fuelTypeMatch
         }.toMutableList()
     }
 

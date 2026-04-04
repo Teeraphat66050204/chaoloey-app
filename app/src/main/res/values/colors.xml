@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Brand Colors -->
     <color name="chaoloey_primary">#0B1730</color>
     <color name="chaoloey_primary_dark">#071225</color>
     <color name="chaoloey_surface">#13233F</color>
     <color name="chaoloey_surface_elevated">#182A4A</color>
     <color name="chaoloey_accent">#F4A900</color>
+
+    <!-- Status Colors (used for booking chips) -->
     <color name="chaoloey_success_bg">#1E4D3A</color>
     <color name="chaoloey_success_text">#CFF8E5</color>
     <color name="chaoloey_warning_bg">#5B4312</color>
     <color name="chaoloey_warning_text">#FFE6A8</color>
+
+    <!-- Text Colors (used throughout dark-theme screens) -->
     <color name="chaoloey_text">#F8FAFC</color>
     <color name="chaoloey_text_muted">#B6C2D1</color>
     <color name="chaoloey_stroke">#2B3A55</color>
+
+    <!-- Base -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- Login Screen Colors -->
+    <!-- Light UI Colors (Login / Register / Main screens) -->
     <color name="login_background">#FFFFFF</color>
     <color name="login_text_primary">#1F2937</color>
     <color name="login_text_secondary">#6B7280</color>
@@ -26,10 +33,16 @@
     <color name="login_button_secondary_text">#1F2937</color>
     <color name="login_link_text">#3B82F6</color>
 
+    <!-- Semantic Colors -->
+    <color name="color_error">#EF4444</color>
+    <color name="color_onboarding_bg">#1A1A1A</color>
+    <color name="color_overlay_dark">#80000000</color>
+
     <!-- Booking Status Colors -->
     <color name="booking_confirmed_bg">#E8F5E9</color>
     <color name="booking_confirmed_text">#4CAF50</color>
     <color name="booking_pending_bg">#FFF3E0</color>
     <color name="booking_pending_text">#FF9800</color>
     <color name="booking_completed_bg">#E3F2FD</color>
-    <color name="booking_completed_text">#2196F3</color></resources>
+    <color name="booking_completed_text">#2196F3</color>
+</resources>

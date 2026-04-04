@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">ChaoloeyApp</string>
-    <string name="welcome_message">Welcome to Chaoloey</string>
-    <string name="login_title">Sign in</string>
     <string name="email_hint">Email</string>
     <string name="password_hint">Password</string>
     <string name="name_hint">Full name</string>
@@ -15,28 +13,19 @@
     <string name="register_success">Account created successfully.</string>
     <string name="register_failed">Registration failed.</string>
     <string name="network_error">Unable to connect to server: %1$s</string>
-    <string name="go_to_register">No account yet? Create one</string>
-    <string name="go_to_login">Already have an account? Log in</string>
-    <string name="car_list_title">Find Your Ride</string>
-    <string name="car_list_subtitle">Clean layout, faster scanning, better proportions.</string>
-    <string name="my_bookings_label">My Bookings</string>
-    <string name="logout_label">Log Out</string>
     <string name="no_cars_found">No cars found</string>
-    <string name="my_bookings_title">My Bookings</string>
-    <string name="my_bookings_subtitle">Track dates, status, and total without cramped cards.</string>
-    <string name="back_to_cars_label">Cars</string>
-    <string name="refresh_label">Refresh</string>
     <string name="no_bookings_found">No bookings found</string>
     <string name="booking_total_label">Total</string>
-aoc
+    <string name="car_image_content_description">Car image</string>
+    <string name="car_price_unit">/ day</string>
+
     <!-- Locations -->
     <string-array name="locations">
         <item>Select Location</item>
         <item>Bangkok (กรุงเทพ)</item>
         <item>Chiang Mai (เชียงใหม่)</item>
         <item>Phuket (ภูเก็ต)</item>
-    </string-array>    <string name="car_image_content_description">Car image</string>
-    <string name="car_price_unit">/ day</string>
+    </string-array>
 
     <!-- Login Screen Strings -->
     <string name="qent_app_name">Chaoloey</string>
@@ -51,11 +40,7 @@ aoc
     <string name="sign_up_link">Sign Up</string>
 
     <!-- Sign Up Screen Strings -->
-    <string name="create_account_title">Sign Up</string>
     <string name="create_account_subtitle">Join us to get started</string>
-    <string name="full_name_hint">Full Name</string>
-    <string name="country_hint">Country</string>
-    <string name="sign_up_btn_main">Sign up</string>
     <string name="already_have_account">Already have an account?</string>
     <string name="login_link">Login</string>
 
@@ -64,6 +49,18 @@ aoc
     <string name="onboarding_page2_title">Lets Start\nA New Experience\nWith Car rental.</string>
     <string name="onboarding_page2_description">Discover your next adventure with Chaoloey. we\'re here to provide you with a seamless car rental experience. Let\'s get started on your journey.</string>
     <string name="get_started">Get Started</string>
+
+    <!-- Booking Details Screen Strings -->
+    <string name="booking_details_title">Booking Details</string>
+    <string name="more">More</string>
+    <string name="booking_with_driver">Book with driver</string>
+    <string name="booking_full_name_required">Full Name*</string>
+    <string name="booking_email_required">Email Address*</string>
+    <string name="booking_contact_required">Contact*</string>
+    <string name="booking_pickup_date">Pick up Date</string>
+    <string name="booking_return_date">Return Date</string>
+    <string name="booking_car_location">Car Location</string>
+    <string name="next">Next</string>
 
     <!-- Icon Content Descriptions -->
     <string name="favorite">Favorite</string>
@@ -92,13 +89,18 @@ aoc
     <string name="car_detail_title">Car Detail</string>
     <string name="label_seats">Seats</string>
     <string name="label_transmission">Transmission</string>
-    <string name="label_transmission_auto">Auto</string>
     <string name="label_fuel_type">Fuel Type</string>
-    <string name="label_fuel_petrol">Petrol</string>
     <string name="label_year">Year</string>
     <string name="label_description">Description</string>
     <string name="book_now">Book Now</string>
     <string name="brand_model_format">%1$s %2$s</string>
     <string name="price_per_day_format">฿%s / วัน</string>
-    <string name="hint_country">Country</string>
+
+    <!-- Payment Screen -->
+    <string name="pay_now">Pay Now</string>
+    <string name="processing">Processing…</string>
+    <string name="booking_failed">Booking failed (code: %1$d)</string>
+    <string name="server_error">Unable to connect to server: %1$s</string>
+    <string name="car_not_found">Car not found. Please try again.</string>
+    <string name="please_login_first">Please log in before booking.</string>
 </resources>

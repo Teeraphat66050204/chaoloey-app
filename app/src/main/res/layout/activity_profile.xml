@@ -179,7 +179,7 @@
                 android:textAllCaps="false"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:backgroundTint="#EF4444"
+                app:backgroundTint="@color/color_error"
                 app:cornerRadius="12dp" />
         </LinearLayout>
     </ScrollView>
