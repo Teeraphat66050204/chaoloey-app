@@ -73,11 +73,4 @@ Endpoints used:
 
 > No API keys or local configuration required — the backend is publicly hosted.
 
----
-
-## Screenshots
-
-| Login | Car List | Booking |
-|---|---|---|
-| _(see app)_ | _(see app)_ | _(see app)_ |
 
